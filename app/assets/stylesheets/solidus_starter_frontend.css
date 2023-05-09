@@ -10,4 +10,13 @@
  *= require spree/frontend/all
  *
  *= require screen
-*/
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+turbo-frame {
+  border: 4px solid orange;
+  display: block;
+}
