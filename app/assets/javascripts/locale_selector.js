@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('turbo:load', () => {
   const localeSelector = document.querySelector('.locale-selector select');
 
   if(localeSelector) {

@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('turbo:load', () => {
   const cartForm = document.getElementById('update-cart');
 
   if (cartForm) {
