@@ -8,7 +8,7 @@ class TaxonsController < StoreController
   respond_to :html
 
   def show
-    @searcher = build_searcher(params.merge(taxon: @taxon.id, include_images: true))
+    @searcher = build_searcher(params.merge(taxon: @taxon.id, include_images: true, per_page: 4))
     @products = @searcher.retrieve_products
   end
 

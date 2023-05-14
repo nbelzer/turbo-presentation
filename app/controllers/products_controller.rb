@@ -13,7 +13,7 @@ class ProductsController < StoreController
   end
 
   def index
-    @searcher = build_searcher(params.merge(include_images: true))
+    @searcher = build_searcher(params.merge(include_images: true, per_page: 4))
     @products = @searcher.retrieve_products
   end
 
