@@ -12,6 +12,7 @@ class CartsController < StoreController
 
   # Shows the current incomplete order from the session
   def show
+    sleep 0.5
     @order = current_order(build_order_if_necessary: true)
     authorize! :edit, @order, cookies.signed[:guest_token]
     if params[:id] && @order.number != params[:id]

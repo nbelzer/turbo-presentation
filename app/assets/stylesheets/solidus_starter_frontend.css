@@ -35,6 +35,19 @@ turbo-frame {
   display: inherit;
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: 2s linear infinite spin;
+}
+
 .product-header__reviews {
   margin-top: -1rem;
   margin-bottom: 1rem;
