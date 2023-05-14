@@ -47,7 +47,7 @@ class ProductsController < StoreController
     else
       @products = Spree::Product.available
     end
-    @product = @products.friendly.find(params[:id])
+    @product = @products.friendly.find(params[:id] || params[:product_id])
   end
 
   def load_taxon
