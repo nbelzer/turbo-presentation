@@ -31,7 +31,9 @@ class ProductsController < StoreController
   end
 
   def rating
-    @rating = product_score(@product)
+    if stale?(@product)
+      @rating = product_score(@product)
+    end
   end
 
   private
