@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ProductsController < StoreController
+  include ProductHelper
+
   before_action :load_product, only: :show
   before_action :load_taxon, only: :index
 
@@ -26,6 +28,7 @@ class ProductsController < StoreController
 
     @product_properties = @product.product_properties.includes(:property)
     @taxon = Spree::Taxon.find(params[:taxon_id]) if params[:taxon_id]
+    @rating = product_score(@product)
   end
 
   private
