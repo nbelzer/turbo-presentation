@@ -10,7 +10,7 @@ class LinkToCartComponent < ViewComponent::Base
   private
 
   def text
-    empty_current_order? ? '' : "<div class='link-text'>#{current_order.item_count}</div>"
+    empty_current_order? ? '' : "<div id='cart-quantity' class='link-text'>#{current_order.item_count}</div>"
   end
 
   def css_class
