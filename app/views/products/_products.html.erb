@@ -24,8 +24,8 @@
   <% if !no_products_found %>
     <%= render 'products/products-grid', products: products %>
   <% end %>
-<% end %>
 
-<% if paginated_products.respond_to?(:total_pages) %>
-  <%= paginate paginated_products %>
+  <% if paginated_products.respond_to?(:total_pages) %>
+    <%= paginate paginated_products %>
+  <% end %>
 <% end %>
