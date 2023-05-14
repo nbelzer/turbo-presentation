@@ -3,14 +3,9 @@
     <%= product.name %>
   </h1>
 
-  <div class="product-header__reviews">
-    <% @rating.times do %>
-      ★
-    <% end %>
-    <% (5-@rating).times do %>
-      ☆
-    <% end %>
-  </div>
+  <%= turbo_frame_tag "#{dom_id(product)}_rating", src: product_rating_path(product), loading: "lazy" do %>
+    <%= render "shared/loading_spinner" %>
+  <% end %>
 
   <% if product.price_for_options(current_pricing_options)&.money and !product.price.nil? %>
     <h2 class="product-header__title" id="product-price">

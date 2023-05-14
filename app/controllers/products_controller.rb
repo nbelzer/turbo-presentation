@@ -3,7 +3,7 @@
 class ProductsController < StoreController
   include ProductHelper
 
-  before_action :load_product, only: :show
+  before_action :load_product, only: [:show, :rating]
   before_action :load_taxon, only: :index
 
   helper 'spree/products', 'spree/taxons', 'taxon_filters'
@@ -28,6 +28,9 @@ class ProductsController < StoreController
 
     @product_properties = @product.product_properties.includes(:property)
     @taxon = Spree::Taxon.find(params[:taxon_id]) if params[:taxon_id]
+  end
+
+  def rating
     @rating = product_score(@product)
   end
 

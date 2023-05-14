@@ -1,0 +1,10 @@
+<%= turbo_frame_tag "#{dom_id(@product)}_rating" do %>
+  <div class="product-header__reviews">
+    <% @rating.times do %>
+      ★
+    <% end %>
+    <% (5-@rating).times do %>
+      ☆
+    <% end %>
+  </div>
+<% end %>

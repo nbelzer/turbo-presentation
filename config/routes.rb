@@ -31,7 +31,9 @@ Rails.application.routes.draw do
 
   resource :account, controller: 'users'
 
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show] do
+    get '/rating', to: 'products#rating', as: :rating, member: true
+  end
 
   resources :autocomplete_results, only: :index
 
