@@ -20,8 +20,10 @@
   </h1>
 <% end %>
 
-<% if !no_products_found %>
-  <%= render 'products/products-grid', products: products %>
+<%= turbo_frame_tag "products" do %>
+  <% if !no_products_found %>
+    <%= render 'products/products-grid', products: products %>
+  <% end %>
 <% end %>
 
 <% if paginated_products.respond_to?(:total_pages) %>
