@@ -1,3 +1,7 @@
 <%= turbo_stream.update "cart-quantity" do %>
   <%= current_order.item_count %>
 <% end %>
+
+<%= turbo_stream.update "cart-popper" do %>
+  <%= turbo_frame_tag "cart", src: cart_path, loading: "lazy" %>
+<% end %>
