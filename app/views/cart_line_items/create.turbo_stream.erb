@@ -3,5 +3,7 @@
 <% end %>
 
 <%= turbo_stream.update "cart-popper" do %>
-  <%= turbo_frame_tag "cart", src: cart_path, loading: "lazy" %>
+  <%= turbo_frame_tag "cart", src: cart_path, loading: "lazy" do %>
+    <%= render "shared/loading_spinner" %>
+  <% end %>
 <% end %>

@@ -21,7 +21,9 @@
     </div>
 
     <div id="cart-popper">
-      <%= turbo_frame_tag "cart", src: cart_path, loading: "lazy" %>
+      <%= turbo_frame_tag "cart", src: cart_path, loading: "lazy" do %>
+        <%= render "shared/loading_spinner" %>
+      <% end %>
     </div>
 
     <script>
