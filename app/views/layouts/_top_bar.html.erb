@@ -21,7 +21,7 @@
     </div>
 
     <div id="cart-popper">
-      <!-- Lazy load cart content here -->
+      <%= turbo_frame_tag "cart", src: cart_path, loading: "lazy" %>
     </div>
 
     <script>
