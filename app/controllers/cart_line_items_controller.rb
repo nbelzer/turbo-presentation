@@ -36,6 +36,7 @@ class CartLineItemsController < StoreController
           redirect_to cart_path
         end
       end
+      format.turbo_stream
     end
   end
 
