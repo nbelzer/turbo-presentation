@@ -1,24 +1,48 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Exercise 0 Set up the app
 
-Things you may want to cover:
+```
+# Setup the database.
+bin/setup
 
-* Ruby version
+# Start the application
+bin/rails s
+```
 
-* System dependencies
+### Exercise 1 Pagination
 
-* Configuration
+Pagination has been enabled for the products, use a turbo frame to encapsulate the pagination to within each turbo frame.
 
-* Database creation
+[Turbo Frames Documentation](https://turbo.hotwired.dev/handbook/frames)
 
-* Database initialization
+The template you should look at is `products/_products.html`.
 
-* How to run the test suite
+### Exercise 2 Infinite Loading
 
-* Services (job queues, cache servers, search engines, etc.)
+Use lazy loaded turbo frames to show the next page.
 
-* Deployment instructions
+The template you should work in is the same as the previous exercise.
+The url of the next page is `path_to_next_page(paginated_products)`.
 
-* ...
+### Exercise 3 Cart Popup
+
+Encapsulate the cart view in a turbo frame and lazy load it in the cart popup.
+
+You can find the cart in `carts/show.html.erb` and the popup in `layouts/_top_bar.html.erb`
+
+Also make sure that the checkout button still works by setting the navigation.
+
+### Exercise 4 Cart Bubble
+
+Use Turbo Streams to update the number shown on the popup.
+
+[Documentation for Turbo Streams](https://turbo.hotwired.dev/handbook/streams).
+
+Also make sure the popup refreshes when an update takes place.
+
+### Exercise 5 Lazy loaded reviews
+
+Our product page has been slow mostly due to the reviews, extract the action and use a turbo frame to lazily load it.
+
+Check out the ``products/product_header.html.erb`` file to see where the reviews are located.
